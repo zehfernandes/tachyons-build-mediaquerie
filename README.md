@@ -1,6 +1,6 @@
 # Tachyons Build Media Queries
 
-Wrap function for [postcss-update-media-queries] to help CLI interfaces.
+Wrap function for [postcss-update-media-queries](https://github.com/zehfernandes/postcss-update-media-queries) to help CLI interfaces.
 
 ## Features
 
@@ -14,7 +14,7 @@ Wrap function for [postcss-update-media-queries] to help CLI interfaces.
 ### Input
 
 ```css
-// Declare your @custom-media and your rules
+/* Declare your @custom-media and your css selectors */
 @custom-media --breakpoint-not-small screen and (min-width: 30em);
 
 .underline { text-decoration: underline; }
@@ -24,7 +24,6 @@ Wrap function for [postcss-update-media-queries] to help CLI interfaces.
 ### Output
 
 ```css
-// The wrap will genarate this file
 @custom-media --breakpoint-not-small screen and (min-width: 30em);
 .underline { text-decoration: underline; }
 .strike { text-decoration: line-through; }
@@ -39,10 +38,10 @@ Wrap function for [postcss-update-media-queries] to help CLI interfaces.
 
 ```js
 const generate = require('tachyons-build-mediaquerie')
-const inputFile = 'src/' // Single file or a directory multiple files
+const inputFile = 'src/' // Single file or a directory with multiple files
 
 generate(inputFile, {
   variables: 'src/variables.css', // To declare @custom-media in a external file
-  overwrite: true // to overwrite and regenerate all media queries
+  overwrite: true // To overwrite and regenerate all media queries
 })
 ```
