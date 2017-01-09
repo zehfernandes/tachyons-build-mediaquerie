@@ -45,7 +45,7 @@ module.exports = function generateMediaQueries (input, options) {
 
     postcss([
       generate({medias: medias, overwrite: options.overwrite}),
-      perfectionist({format: 'compact'}) ]
+      perfectionist({format: 'compressed'}) ]
     ).process(contentFile, { from: inputFile })
       .then(function (result) {
         result.warnings().forEach(function (warn) {
